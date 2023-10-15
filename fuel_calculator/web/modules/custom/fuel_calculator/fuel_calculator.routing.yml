@@ -1,0 +1,19 @@
+fuel_calculator.calculator:
+  path: 'fuel_calculator'
+  defaults:
+   _form: '\Drupal\fuel_calculator\Form\fuel_calculatorForm'
+   _title: 'Fuel Calculator'
+  requirements:
+   _permission: 'access content'
+
+
+# fuel_calculator.submit:
+#   path: 'fuel_calculator/dt={distance_travelled}_fc={fuel_consumption}_ppl={price_per_liter}'
+#   defaults:
+#    _form: '\Drupal\fuel_calculator\Form\fuel_calculatorForm'
+#    _title: 'Fuel Calculator'
+#    distance_travelled: '0'
+#    fuel_consumption: '0'
+#    price_per_liter: '0'
+#   requirements:
+#    _permission: 'access content'
