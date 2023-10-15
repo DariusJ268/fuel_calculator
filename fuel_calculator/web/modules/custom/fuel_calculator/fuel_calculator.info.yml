@@ -1,0 +1,6 @@
+name: Fuel Calculator
+description: Allow users to calculate consumed fuel and the cost of that fuel
+package: CustomModules
+version: 1.0
+type: module
+core_version_requirement: ^9 || ^10
