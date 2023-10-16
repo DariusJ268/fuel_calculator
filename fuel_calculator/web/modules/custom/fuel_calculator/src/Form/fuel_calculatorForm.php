@@ -107,13 +107,6 @@ class fuel_calculatorForm extends FormBase {
         $fuel_consumption = $form_state->getValue('fuel_consumption');
         $price_per_liter = $form_state->getValue('price_per_liter');
 
-
-        // $form_state->setRedirect('fuel_calculator.submit', [
-        //     'distance_travelled' => $distance_travelled,
-        //     'fuel_consumption' => $fuel_consumption,
-        //     'price_per_liter' => $price_per_liter,
-        // ]);
-
         $url = \Drupal\Core\Url::fromRoute('fuel_calculator.submit', [
             'distance_travelled' => $distance_travelled,
             'fuel_consumption' => $fuel_consumption,
