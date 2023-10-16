@@ -1,1 +1,3 @@
-
+URL was working (in browser, as example, it was like .../fuel_calculator/50/15/3 (where 50 - distance travelled, 15 - fuel consumption and 3 - price per liter)). I have no idea, why it is not working right now.
+Regarding the REST API services - unfortunately, I have yet to get experience on working with those. This website I built while additionally learning and searching information that would help me to perform this task. I know that there is a lot of room for improvement and I am willing to improve my knowledge with Drupal - I found it very interesting to do this project and learn new things while doing it.
+P.S. reset button for some reason only resets calculation results, but not imputs.
