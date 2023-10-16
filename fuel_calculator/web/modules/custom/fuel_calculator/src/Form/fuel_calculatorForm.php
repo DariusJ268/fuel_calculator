@@ -13,43 +13,45 @@ class fuel_calculatorForm extends FormBase {
     }
 
     public function buildForm(array $form, FormStateInterface $form_state){
+
+        $distance_travelled = is_float($form_state -> hasValue('distance_travelled')) ? floatval($form_state -> getValue('distance_travelled')) : '';
+        $fuel_consumption = is_float($form_state -> hasValue('fuel_consumption')) ? floatval ($form_state -> getValue('fuel_consumption')) : '';
+        $price_per_liter = is_float($form_state -> hasValue('price_per_liter')) ? floatval($form_state -> getValue('price_per_liter')) : '';
         
         $form ['distance_travelled'] = array(
             '#type' => 'textfield',
             '#title' => 'Distance traveled, km',
-            '#default_value' => '300',
+            '#default_value' => $distance_travelled,
             '#required' => TRUE
         );
 
         $form ['fuel_consumption'] = array(
             '#type' => 'textfield',
             '#title' => 'Fuel consumption, l/100km',
-            '#default_value' => '3',
+            '#default_value' => $fuel_consumption,
             '#required' => TRUE
         );
 
         $form ['price_per_liter'] = array(
             '#type' => 'textfield',
             '#title' => 'Price per Liter, EUR',
-            '#default_value' => '5',
+            '#default_value' => $price_per_liter,
             '#required' => TRUE
         );
-
-        $distance_travelled = $form_state->getValue('distance_travelled');
-        $fuel_consumption = $form_state->getValue('fuel_consumption');
-        $price_per_liter = $form_state->getValue('price_per_liter');
 
         $fuelSpent = ($distance_travelled * $fuel_consumption)/100;
     
         $form ['fuelSpent'] = [
-            '#markup' => sprintf('Fuel spent %s liters', $fuelSpent),
+            '#type' => 'markup',
+            '#markup' => sprintf('Fuel spent %s liters.', $fuelSpent),
             '#suffix' => '<br>'
         ];
            
         $fuelCost =  $fuelSpent * $price_per_liter;
        
         $form ['fuelCost'] = [
-            '#markup' => sprintf('Fuel cost %s liters', $fuelCost),
+            '#type' => 'markup',
+            '#markup' => sprintf('Fuel cost %s Euros.', $fuelCost),
             '#suffix' => '<br>'
         ];
         
